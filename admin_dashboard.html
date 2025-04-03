@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Hệ Thống Hồ Sơ Y Tế Blockchain</title>
     <link rel="stylesheet" href="access/css/style_admin_dashboard.css">
+    <script src="access/script/admin_dashboard_script.js"></script>
     </head>
 <body>
     <div class="dashboard-container">
@@ -66,8 +67,30 @@
 
             <section id="user-management" class="content-section" style="display: none;">
                 <h2>Quản Lý Người Dùng</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Nhập tên, email hoặc ID người dùng..." id="search-user">
+                    <button class="btn btn-primary"><i class="fas fa-search"></i> Tìm Kiếm</button>
+                </div>
+                <div class="filter-bar">
+                    <label for="role-filter">Lọc theo vai trò:</label>
+                    <select id="role-filter">
+                        <option value="all">Tất cả</option>
+                        <option value="patient">Bệnh Nhân</option>
+                        <option value="doctor">Bác Sĩ</option>
+                        <option value="admin">Quản Trị Viên</option>
+                    </select>
+
+                    <label for="status-filter">Lọc theo trạng thái:</label>
+                    <select id="status-filter">
+                        <option value="all">Tất cả</option>
+                        <option value="active">Hoạt động</option>
+                        <option value="pending">Chờ duyệt</option>
+                        <option value="inactive">Không hoạt động</option>
+                    </select>
+                    <button class="btn btn-secondary">Áp Dụng</button>
+                </div>
                 <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Người Dùng Mới</button>
-                 <div class="table-container">
+                <div class="table-container">
                     <table>
                         <thead>
                             <tr>
@@ -80,11 +103,31 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Dữ liệu người dùng -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="facility-management" class="content-section">
+                <h2>Quản Lý Cơ Sở Y Tế</h2>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Cơ Sở Mới</button>
+                <div class="table-container">
+                    <table>
+                        <thead>
                             <tr>
-                                <td>P001</td>
-                                <td>Nguyễn Văn B</td>
-                                <td>van.b@email.com</td>
-                                <td>Bệnh Nhân</td>
+                                <th>ID</th>
+                                <th>Tên Cơ Sở</th>
+                                <th>Địa Chỉ</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CS001</td>
+                                <td>Bệnh Viện ABC</td>
+                                <td>123 Đường A, TP.HCM</td>
                                 <td><span class="status active">Hoạt động</span></td>
                                 <td>
                                     <button class="btn btn-sm btn-info"><i class="fas fa-eye"></i></button>
@@ -92,26 +135,10 @@
                                     <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
-                             <tr>
-                                <td>D005</td>
-                                <td>BS. Trần Thị C</td>
-                                <td>tran.c@hospital.org</td>
-                                <td>Bác Sĩ</td>
-                                <td><span class="status pending">Chờ duyệt</span></td>
-                                 <td>
-                                    <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Duyệt</button>
-                                    <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Từ chối</button>
-                                </td>
-                            </tr>
-                            </tbody>
+                            <!-- Thêm các dòng cơ sở khác -->
+                        </tbody>
                     </table>
-                 </div>
-            </section>
-
-            <section id="facility-management" class="content-section" style="display: none;">
-                 <h2>Quản Lý Cơ Sở Y Tế</h2>
-                 <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Cơ Sở Mới</button>
-                 <div class="placeholder-table">Bảng danh sách Cơ sở Y tế (Placeholder)</div>
+                </div>
             </section>
 
             <section id="system-monitoring" class="content-section" style="display: none;">
@@ -159,7 +186,8 @@
                                 <td>Bác Sĩ (D005)</td>
                                 <td>Tài khoản BS. Trần Thị C đã được duyệt</td>
                             </tr>
-                           </tbody>
+                            <!-- Thêm các dòng nhật ký khác -->
+                        </tbody>
                     </table>
                 </div>
             </section>
@@ -181,6 +209,13 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Lưu Cài Đặt</button>
                 </form>
+            </section>
+
+            <section id="statistics" class="content-section">
+                <h2>Thống Kê Người Dùng</h2>
+                <div class="chart-container">
+                    <canvas id="user-statistics-chart"></canvas>
+                </div>
             </section>
 
             </main>

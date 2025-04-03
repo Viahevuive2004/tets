@@ -165,3 +165,68 @@ body {
 .login-link a:hover, .back-to-home a:hover {
     text-decoration: underline;
 }
+/* --- CSS Cơ Bản Cho Nhóm CCCD --- */
+
+.cccd-group {
+    margin-bottom: 15px; /* Tạo khoảng cách dưới với các trường khác */
+    /* Bạn có thể thêm các thuộc tính khác cho cả nhóm nếu muốn */
+    text-align: left;
+  }
+  
+  /* --- Định dạng cho Nhãn (Label) --- */
+  .cccd-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9em;
+  }
+  
+  /* --- Định dạng cho Ô Nhập (Input) --- */
+  .cccd-group input#cccd {
+    width: 100%; /* Ô input chiếm toàn bộ chiều rộng của thẻ chứa nó */
+    padding: 12px 15px; /* Khoảng cách bên trong ô input (giữa chữ và viền) */
+    border: 1px solid #ccc; /* Viền mỏng, màu xám nhạt */
+    border-radius: 5px; /* Bo góc nhẹ cho mềm mại */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng */
+    font-size: 1em; /* Cỡ chữ trong ô input */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* --- Định dạng khi ô input được chọn (focus) --- */
+  .cccd-group input#cccd:focus {
+    border-color: #007bff; /* Đổi màu viền khi focus (ví dụ: màu xanh dương) */
+    outline: none; /* Bỏ viền focus mặc định của trình duyệt */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Thêm hiệu ứng bóng mờ nhẹ khi focus */
+  }
+  
+  /* --- (Tùy chọn) Nếu muốn nhãn và input nằm trên cùng hàng --- */
+  /* Bỏ display: block ở label và thêm CSS này */
+  /*
+  .cccd-group label {
+    display: inline-block; * Cho nhãn và input nằm cạnh nhau *
+    width: 150px; * Đặt chiều rộng cố định cho nhãn (điều chỉnh nếu cần) *
+    margin-right: 10px; * Khoảng cách giữa nhãn và input *
+    vertical-align: middle; * Căn giữa theo chiều dọc *
+  }
+  
+  .cccd-group input#cccd {
+    display: inline-block;
+    width: calc(100% - 160px); * Chiều rộng input = 100% trừ đi chiều rộng label và khoảng cách *
+    vertical-align: middle;
+  }
+  */
+  
+  /* --- (Tùy chọn) Thêm CSS cho trạng thái lỗi (nếu bạn có dùng JavaScript để validate) --- */
+  /* Giả sử bạn thêm class 'error' vào input khi có lỗi */
+  /*
+  .cccd-group input#cccd.error {
+    border-color: #dc3545; * Viền màu đỏ *
+  }
+  
+  .cccd-group .error-message { * Giả sử có thẻ để hiển thị thông báo lỗi *
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  */

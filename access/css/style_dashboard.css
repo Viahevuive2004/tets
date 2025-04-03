@@ -1,0 +1,268 @@
+/* Reset cơ bản & Kiểu chữ chung */
+body, h1, h2, h3, p, ul, li, table, th, td, form, label, input, button, a, i {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Hoặc font khác bạn muốn */
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* Layout chính của Dashboard */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Màu nền sidebar */
+    color: #ecf0f1; /* Màu chữ sidebar */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.sidebar .logo {
+    padding: 20px 15px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar .logo h2 {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding-top: 15px;
+}
+
+.sidebar .menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #bdc3c7; /* Màu chữ menu item */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 3px solid transparent;
+    font-size: 0.95em;
+}
+.sidebar .menu ul li a i { /* Style icon */
+    margin-right: 10px;
+    width: 16px;
+    text-align: center;
+}
+
+.sidebar .menu ul li a:hover,
+.sidebar .menu ul li.active a {
+    background-color: #34495e; /* Màu nền khi hover/active */
+    color: #fff; /* Màu chữ khi hover/active */
+    border-left-color: #3498db; /* Màu viền trái khi active */
+}
+
+
+.user-info-sidebar {
+    margin-top: auto; /* Đẩy xuống cuối sidebar */
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #34495e;
+}
+
+.user-info-sidebar p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.logout-btn {
+    color: #e74c3c; /* Màu nút đăng xuất */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.logout-btn i {
+    margin-right: 5px;
+}
+
+.logout-btn:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Chiếm phần còn lại */
+    background-color: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background-color: #ecf0f1; /* Màu nền header chính */
+    padding: 15px 30px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.main-header h1 {
+    font-size: 1.6em;
+    color: #2c3e50;
+     margin: 0;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 30px;
+    flex-grow: 1; /* Đảm bảo section chiếm hết không gian còn lại */
+    /* display: none; */ /* JavaScript sẽ xử lý việc hiển thị section phù hợp */
+}
+.content-section h2 {
+    margin-bottom: 25px;
+    color: #34495e;
+    font-size: 1.5em;
+    border-bottom: 2px solid #3498db; /* Đường gạch chân tiêu đề section */
+    padding-bottom: 10px;
+}
+
+/* Styling cho Bảng */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Gộp đường viền */
+    margin-top: 20px;
+    background-color: #fff; /* Nền trắng cho bảng */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
+}
+
+table thead {
+    background-color: #f8f9fa; /* Màu nền header bảng */
+}
+
+table th, table td {
+    border: 1px solid #dee2e6; /* Đường viền ô */
+    padding: 12px 15px; /* Padding trong ô */
+    text-align: left;
+    font-size: 0.95em;
+    vertical-align: middle;
+}
+
+table th {
+    font-weight: 600;
+    color: #495057;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Màu nền xen kẽ cho các dòng */
+}
+table tbody tr:hover {
+     background-color: #e9ecef;
+}
+
+table a {
+    color: #007bff;
+    text-decoration: none;
+}
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Styling cho Nút */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 5px; /* Khoảng cách giữa các nút */
+    vertical-align: middle; /* Căn nút thẳng hàng với text trong bảng */
+}
+.btn i { /* Style icon trong nút */
+     margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+     background-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-sm { /* Nút nhỏ hơn */
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+/* Status labels */
+.status {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+.status.active { background-color: #d4edda; color: #155724; border-color: #c3e6cb;}
+.status.pending { background-color: #fff3cd; color: #856404; border-color: #ffeeba;}
+.status.inactive { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;}
+
+/* Styling cho Form trong phần Profile */
+#profile form {
+    max-width: 600px; /* Giới hạn chiều rộng form */
+    background-color: #fdfdff;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%; /* Chiếm hết chiều rộng */
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+.form-group input[readonly] { /* Kiểu cho input chỉ đọc */
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+#profile form button {
+    margin-top: 10px;
+}

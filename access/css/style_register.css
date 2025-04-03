@@ -1,0 +1,167 @@
+/* Reset cơ bản & Kiểu chữ chung */
+body, h2, p, label, input, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Hoặc font bạn đã dùng */
+}
+
+body {
+    background-color: #eef1f4; /* Giữ màu nền giống trang login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 15px; /* Thêm padding để box không dính sát cạnh khi màn hình nhỏ */
+}
+
+.register-container {
+    width: 100%;
+}
+
+.register-box {
+    background-color: #fff;
+    padding: 40px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 480px; /* Có thể tăng max-width so với login box */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.register-box h2 {
+    margin-bottom: 10px;
+    color: #0056b3;
+    font-size: 1.8em;
+}
+
+.register-box .subtitle {
+    margin-bottom: 30px;
+    color: #6c757d;
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 18px; /* Giảm khoảng cách một chút nếu nhiều field */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="date"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+/* Style riêng cho input date nếu cần */
+.input-group input[type="date"] {
+    /* Có thể cần style thêm để đồng bộ giao diện trên các trình duyệt */
+    appearance: none; /* Cố gắng loại bỏ style mặc định */
+    position: relative;
+}
+/* Icon calendar (ví dụ đơn giản) - cần tinh chỉnh thêm */
+/* .input-group input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    cursor: pointer;
+} */
+
+.input-group input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.terms {
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 0.85em;
+    display: flex;
+    align-items: flex-start; /* Căn trên nếu label dài */
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 8px;
+    margin-top: 4px; /* Chỉnh vị trí checkbox thẳng hàng với dòng đầu text */
+    flex-shrink: 0; /* Không co checkbox lại */
+    accent-color: #007bff;
+}
+
+.terms label {
+    color: #495057;
+    line-height: 1.4; /* Giãn dòng cho dễ đọc */
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Nút Đăng Ký */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.login-link, .back-to-home {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.login-link a, .back-to-home a {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover, .back-to-home a:hover {
+    text-decoration: underline;
+}

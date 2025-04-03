@@ -1,0 +1,154 @@
+/* Reset cơ bản & Kiểu chữ chung */
+body, h2, p, label, input, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Hoặc font bạn đã dùng ở trang chủ */
+}
+
+body {
+    background-color: #eef1f4; /* Màu nền nhẹ nhàng cho trang */
+    display: flex;
+    justify-content: center; /* Căn giữa box đăng nhập theo chiều ngang */
+    align-items: center; /* Căn giữa box đăng nhập theo chiều dọc */
+    min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao màn hình */
+}
+
+.login-container {
+    /* Không cần style nhiều nếu body đã dùng flex để căn giữa */
+    width: 100%;
+    padding: 20px; /* Thêm padding cho màn hình nhỏ */
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px 35px; /* Padding bên trong box */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    max-width: 400px; /* Chiều rộng tối đa của box */
+    width: 100%; /* Chiếm toàn bộ chiều rộng container trên màn hình nhỏ */
+    margin: 0 auto; /* Căn giữa box nếu container không dùng flex */
+    text-align: center; /* Căn giữa tiêu đề và link đăng ký */
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #0056b3; /* Màu tiêu đề giống logo */
+    font-size: 1.8em;
+}
+
+.login-box .subtitle {
+    margin-bottom: 30px;
+    color: #6c757d; /* Màu xám cho phụ đề */
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Căn trái label và input */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px; /* Padding lớn hơn chút */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #80bdff; /* Highlight viền khi focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Thêm hiệu ứng shadow nhẹ */
+}
+
+.options {
+    display: flex;
+    justify-content: space-between; /* Đẩy 2 phần tử ra 2 bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 25px;
+    font-size: 0.85em;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #007bff; /* Màu dấu tick checkbox */
+}
+
+.remember-me label {
+    margin-bottom: 0; /* Bỏ margin bottom mặc định của label */
+    font-weight: normal;
+    color: #495057;
+}
+
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Nút Đăng Nhập - Sử dụng lại style từ trang chủ nếu có */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-login {
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng */
+    padding: 12px; /* Padding lớn hơn cho nút chính */
+    font-size: 1.1em; /* Chữ to hơn */
+    margin-bottom: 20px; /* Khoảng cách dưới nút */
+}
+
+.register-link, .back-to-home {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.register-link a, .back-to-home a {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover, .back-to-home a:hover {
+    text-decoration: underline;
+}

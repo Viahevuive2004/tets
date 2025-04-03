@@ -1,0 +1,330 @@
+/* Reset cơ bản & Kiểu chữ chung */
+body, h1, h2, h3, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Thay bằng font bạn muốn */
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Màu link mặc định */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* Căn giữa container */
+}
+
+/* Header */
+.homepage-header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Đảm bảo header nổi lên trên */
+}
+
+.homepage-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #0056b3; /* Màu logo */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #0056b3;
+}
+
+.auth-buttons a {
+    margin-left: 10px;
+}
+
+/* Styling cho Nút (có thể dùng lại từ dashboard hoặc tùy chỉnh) */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-secondary {
+     background-color: #6c757d;
+    color: #fff;
+    border-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #fff; /* Màu chữ cho nút outline trên nền tối */
+    border-color: #fff; /* Màu viền */
+}
+.btn-outline:hover {
+    background-color: #fff;
+    color: #007bff; /* Màu chữ khi hover */
+}
+
+
+.btn-lg { /* Nút lớn hơn */
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+
+/* === PHẦN CẦN CẬP NHẬT TRONG style_homepage.css === */
+
+/* Hero Section - ĐÃ CẬP NHẬT */
+/* === PHẦN CẦN CẬP NHẬT LẠI TRONG style_homepage.css === */
+
+/* Hero Section - ĐÃ CẬP NHẬT ĐỂ DÙNG ẢNH NỀN */
+.hero {
+    /* Thêm lại background-image và lớp phủ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-hero-image.jpg');
+    /* !!! QUAN TRỌNG: Thay 'your-hero-image.jpg' bằng đường dẫn đến ảnh của bạn !!! */
+
+    /* background-color: #808080; */ /* Xóa hoặc comment dòng màu nền cũ */
+    background-size: cover; /* Đảm bảo ảnh nền che phủ toàn bộ khu vực */
+    background-position: center; /* Căn giữa ảnh nền */
+    color: #fff; /* Giữ màu chữ trắng */
+    text-align: center; /* Giữ căn giữa text */
+
+    min-height: 70vh; /* Có thể điều chỉnh chiều cao */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px; /* Thêm lại padding nếu cần thêm khoảng trống */
+}
+
+/* Áp dụng trực tiếp cho H1 trong .hero */
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    /* Thêm lại text-shadow để dễ đọc trên nền ảnh */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Áp dụng trực tiếp cho P trong .hero */
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+     /* Thêm lại text-shadow để dễ đọc trên nền ảnh */
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* Nút Outline - Đảm bảo phù hợp với ảnh nền */
+.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+.btn-outline:hover {
+    background-color: #fff;
+    color: #333; /* Đổi màu chữ khi hover để đọc được trên nền trắng */
+    border-color: #fff;
+}
+
+/* === KẾT THÚC PHẦN CẬP NHẬT === */
+
+/* Giữ nguyên các phần CSS khác của trang chủ (header, info-section, footer...) */
+/* ... (Phần còn lại của style_homepage.css) ... */
+/* Info Sections */
+.info-section {
+    padding: 60px 0;
+}
+
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2em;
+    color: #0056b3;
+}
+
+.bg-light {
+    background-color: #f8f9fa; /* Màu nền xen kẽ */
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Lưới tự động co giãn */
+    gap: 40px; /* Khoảng cách giữa các item */
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 60px; /* Kích thước icon */
+    height: 60px;
+    margin-bottom: 15px;
+    /* Thêm style cho icon nếu cần */
+    background-color: #ddd; /* Placeholder */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.feature-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Benefits List */
+#benefits ul {
+    list-style: none; /* Bỏ dấu chấm đầu dòng mặc định */
+    max-width: 800px;
+    margin: 0 auto; /* Căn giữa danh sách */
+}
+
+#benefits ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 30px; /* Tạo khoảng trống cho dấu check */
+    position: relative;
+}
+
+#benefits ul li::before { /* Thêm dấu check ✓ */
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745; /* Màu xanh lá */
+    font-weight: bold;
+}
+
+/* How it Works Steps */
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    gap: 30px;
+}
+
+.step {
+    flex-basis: 22%; /* Chia đều cho 4 cột, có thể điều chỉnh */
+    min-width: 200px; /* Chiều rộng tối thiểu */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 auto 15px auto; /* Căn giữa và tạo khoảng cách dưới */
+}
+
+.step h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+.step p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Contact Section */
+.text-center {
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-buttons .btn {
+     margin: 0 10px;
+}
+
+/* Footer */
+.homepage-footer {
+    background-color: #343a40;
+    color: #ccc;
+    padding: 30px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.homepage-footer p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.homepage-footer a {
+    color: #fff; /* Màu link footer */
+    text-decoration: underline;
+}
+.homepage-footer a:hover {
+    color: #007bff;
+}

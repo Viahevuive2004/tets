@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hệ Thống Hồ Sơ Y Tế Blockchain</title>
+    <link rel="stylesheet" href="access/css/style_admin_dashboard.css">
+    </head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Admin Panel</h2>
+                <span>Y Tế Blockchain</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#overview"><i class="fas fa-tachometer-alt"></i> Tổng Quan</a></li>
+                    <li><a href="#user-management"><i class="fas fa-users"></i> Quản Lý Người Dùng</a>
+                        </li>
+                    <li><a href="#facility-management"><i class="fas fa-hospital"></i> Quản Lý Cơ Sở Y Tế</a></li>
+                    <li><a href="#system-monitoring"><i class="fas fa-heartbeat"></i> Giám Sát Hệ Thống</a></li>
+                    <li><a href="#blockchain-monitoring"><i class="fas fa-cubes"></i> Giám Sát Blockchain</a></li>
+                    <li><a href="#audit-log"><i class="fas fa-history"></i> Nhật Ký Hoạt Động</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Cài Đặt</a></li>
+                </ul>
+            </nav>
+            <div class="user-info-sidebar">
+                <p>Xin chào, <strong>Admin [Tên Admin]</strong></p>
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="section-title">Tổng Quan</h1>
+            </header>
+
+            <section id="overview" class="content-section">
+                <h2>Thống Kê Nhanh</h2>
+                <div class="stat-cards">
+                    <div class="card">
+                        <h3><i class="fas fa-user-injured"></i> Bệnh Nhân</h3>
+                        <p class="stat-number">1,234</p>
+                        <span>Tổng số tài khoản</span>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-user-md"></i> Bác Sĩ</h3>
+                        <p class="stat-number">567</p>
+                        <span>Tài khoản đã xác thực</span>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-clinic-medical"></i> Cơ Sở Y Tế</h3>
+                        <p class="stat-number">89</p>
+                        <span>Đang hoạt động</span>
+                    </div>
+                    <div class="card">
+                         <h3><i class="fas fa-exchange-alt"></i> Giao dịch Blockchain</h3>
+                        <p class="stat-number">5,678</p>
+                        <span>Trong 24 giờ</span>
+                    </div>
+                </div>
+                <h2>Hoạt động gần đây</h2>
+                <div class="placeholder-chart">Biểu đồ hoạt động hệ thống (Placeholder)</div>
+            </section>
+
+            <section id="user-management" class="content-section" style="display: none;">
+                <h2>Quản Lý Người Dùng</h2>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Người Dùng Mới</button>
+                 <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ Tên / Tên Đơn vị</th>
+                                <th>Email / Liên hệ</th>
+                                <th>Vai trò</th>
+                                <th>Trạng thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>P001</td>
+                                <td>Nguyễn Văn B</td>
+                                <td>van.b@email.com</td>
+                                <td>Bệnh Nhân</td>
+                                <td><span class="status active">Hoạt động</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>D005</td>
+                                <td>BS. Trần Thị C</td>
+                                <td>tran.c@hospital.org</td>
+                                <td>Bác Sĩ</td>
+                                <td><span class="status pending">Chờ duyệt</span></td>
+                                 <td>
+                                    <button class="btn btn-sm btn-success"><i class="fas fa-check"></i> Duyệt</button>
+                                    <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Từ chối</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                 </div>
+            </section>
+
+            <section id="facility-management" class="content-section" style="display: none;">
+                 <h2>Quản Lý Cơ Sở Y Tế</h2>
+                 <button class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Cơ Sở Mới</button>
+                 <div class="placeholder-table">Bảng danh sách Cơ sở Y tế (Placeholder)</div>
+            </section>
+
+            <section id="system-monitoring" class="content-section" style="display: none;">
+                 <h2>Giám Sát Hệ Thống</h2>
+                 <p>Trạng thái máy chủ, tài nguyên, lỗi gần đây...</p>
+                 <div class="monitoring-metrics">
+                    <div>CPU Load: <strong>35%</strong></div>
+                    <div>Memory Usage: <strong>60%</strong></div>
+                    <div>Disk Space: <strong>75% Free</strong></div>
+                    <div>Network Status: <strong style="color: green;">Online</strong></div>
+                 </div>
+                 <h3>Logs Lỗi Gần Đây</h3>
+                 <div class="placeholder-log">Hiển thị logs lỗi (Placeholder)</div>
+            </section>
+
+            <section id="blockchain-monitoring" class="content-section" style="display: none;">
+                 <h2>Giám Sát Blockchain</h2>
+                 <div class="blockchain-info">
+                     <div>Block mới nhất: <strong>#1,234,567</strong></div>
+                     <div>Số giao dịch chờ xử lý: <strong>15</strong></div>
+                     <div>Trạng thái Nodes: <strong>5/5 Online</strong></div>
+                 </div>
+                  <h3>Giao Dịch Mới Nhất</h3>
+                 <div class="placeholder-table">Bảng giao dịch blockchain (Placeholder)</div>
+            </section>
+
+            <section id="audit-log" class="content-section" style="display: none;">
+                <h2>Nhật Ký Hoạt Động Admin</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thời Gian</th>
+                                <th>Admin</th>
+                                <th>Hành Động</th>
+                                <th>Đối tượng</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-04-03 16:20:00</td>
+                                <td>admin_user1</td>
+                                <td>Duyệt tài khoản</td>
+                                <td>Bác Sĩ (D005)</td>
+                                <td>Tài khoản BS. Trần Thị C đã được duyệt</td>
+                            </tr>
+                           </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="settings" class="content-section" style="display: none;">
+                <h2>Cài Đặt Hệ Thống</h2>
+                <form>
+                    <div class="setting-group">
+                        <label>Email thông báo hệ thống:</label>
+                        <input type="email" value="admin@yteblockchain.vn">
+                    </div>
+                     <div class="setting-group">
+                        <label>Số lượng mục hiển thị trên mỗi trang:</label>
+                        <select>
+                            <option>10</option>
+                            <option selected>20</option>
+                            <option>50</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu Cài Đặt</button>
+                </form>
+            </section>
+
+            </main>
+    </div>
+
+    </body>
+</html>

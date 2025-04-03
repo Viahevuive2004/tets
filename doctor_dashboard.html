@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Bác Sĩ - Hệ Thống Hồ Sơ Y Tế Blockchain</title>
+    <link rel="stylesheet" href="access/css/style_doctor_dashboard.css">
+    </head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Bác Sĩ Portal</h2>
+                <span>Y Tế Blockchain</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#my-patients"><i class="fas fa-user-injured"></i> Bệnh Nhân Của Tôi</a></li>
+                    <li><a href="#search-patient"><i class="fas fa-search"></i> Tìm Kiếm Bệnh Nhân</a></li>
+                    <li><a href="#access-requests"><i class="fas fa-key"></i> Yêu Cầu Truy Cập</a></li>
+                    <li><a href="#notifications"><i class="fas fa-bell"></i> Thông Báo <span class="badge">3</span></a></li>
+                    <li><a href="#doctor-profile"><i class="fas fa-user-md"></i> Hồ Sơ Cá Nhân</a></li>
+                </ul>
+            </nav>
+            <div class="user-info-sidebar">
+                <p>Xin chào, <strong>BS. [Tên Bác Sĩ]</strong></p>
+                <p><small>BV [Tên Bệnh Viện]</small></p>
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="section-title">Bệnh Nhân Của Tôi</h1>
+            </header>
+
+            <section id="my-patients" class="content-section">
+                <h2>Danh sách bệnh nhân có quyền truy cập</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã BN</th>
+                                <th>Họ Tên</th>
+                                <th>Ngày Sinh</th>
+                                <th>Giới Tính</th>
+                                <th>Lần Khám Gần Nhất</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BN00123</td>
+                                <td>Nguyễn Thị An</td>
+                                <td>15/08/1990</td>
+                                <td>Nữ</td>
+                                <td>01/04/2025</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info" onclick="viewPatientRecord('BN00123')"><i class="fas fa-eye"></i> Xem HS</button>
+                                    <button class="btn btn-sm btn-primary" onclick="openAddRecordModal('BN00123')"><i class="fas fa-plus"></i> Thêm HS Mới</button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>BN00456</td>
+                                <td>Trần Văn Bình</td>
+                                <td>20/11/1985</td>
+                                <td>Nam</td>
+                                <td>28/03/2025</td>
+                                <td>
+                                     <button class="btn btn-sm btn-info" onclick="viewPatientRecord('BN00456')"><i class="fas fa-eye"></i> Xem HS</button>
+                                     <button class="btn btn-sm btn-primary" onclick="openAddRecordModal('BN00456')"><i class="fas fa-plus"></i> Thêm HS Mới</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="search-patient" class="content-section" style="display: none;">
+                <h2>Tìm Kiếm Bệnh Nhân</h2>
+                 <div class="search-bar">
+                    <input type="text" placeholder="Nhập Mã BN, Tên, hoặc CCCD...">
+                    <button class="btn btn-primary"><i class="fas fa-search"></i> Tìm Kiếm</button>
+                 </div>
+                 <div class="search-results">
+                    <h3>Kết quả tìm kiếm:</h3>
+                    <p>Chưa có kết quả tìm kiếm.</p>
+                    </div>
+            </section>
+
+            <section id="access-requests" class="content-section" style="display: none;">
+                <h2>Quản Lý Yêu Cầu Truy Cập</h2>
+                <h3>Yêu cầu đã gửi:</h3>
+                <div class="table-container">
+                     <table>
+                        <thead>
+                            <tr>
+                                <th>Mã BN</th>
+                                <th>Tên Bệnh Nhân</th>
+                                <th>Ngày Gửi</th>
+                                <th>Trạng Thái</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BN00999</td>
+                                <td>Phạm Thị Dung</td>
+                                <td>02/04/2025</td>
+                                <td><span class="status pending">Đang chờ</span></td>
+                                <td><button class="btn btn-sm btn-secondary" disabled>Chờ phản hồi</button></td>
+                            </tr>
+                            <tr>
+                                <td>BN00111</td>
+                                <td>Hoàng Văn Em</td>
+                                <td>30/03/2025</td>
+                                <td><span class="status rejected">Đã từ chối</span></td>
+                                <td><button class="btn btn-sm btn-secondary" onclick="requestAccess('BN00111')">Gửi lại YC</button></td>
+                            </tr>
+                             <tr>
+                                <td>BN00222</td>
+                                <td>Vũ Thị Hà</td>
+                                <td>25/03/2025</td>
+                                <td><span class="status active">Đã chấp nhận</span></td>
+                                 <td><button class="btn btn-sm btn-info" onclick="viewPatientRecord('BN00222')"><i class="fas fa-eye"></i> Xem HS</button></td>
+                            </tr>
+                        </tbody>
+                     </table>
+                </div>
+            </section>
+
+            <section id="notifications" class="content-section" style="display: none;">
+                <h2>Thông Báo</h2>
+                <ul class="notification-list">
+                    <li class="unread">
+                        <p>Bệnh nhân <strong>Nguyễn Thị An (BN00123)</strong> vừa cấp quyền truy cập hồ sơ cho bạn.</p>
+                        <span class="timestamp">5 phút trước</span>
+                    </li>
+                     <li>
+                        <p>Yêu cầu truy cập hồ sơ của <strong>Hoàng Văn Em (BN00111)</strong> đã bị từ chối.</p>
+                        <span class="timestamp">Hôm qua</span>
+                    </li>
+                     <li>
+                        <p>Có kết quả xét nghiệm mới cho bệnh nhân <strong>Trần Văn Bình (BN00456)</strong>.</p>
+                         <span class="timestamp">2 ngày trước</span>
+                    </li>
+                    </ul>
+            </section>
+
+            <section id="doctor-profile" class="content-section" style="display: none;">
+                <h2>Hồ Sơ Cá Nhân</h2>
+                 <form>
+                    <div class="form-group">
+                        <label for="doc-fullname">Họ và Tên:</label>
+                        <input type="text" id="doc-fullname" value="BS. [Tên Bác Sĩ]" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="doc-specialty">Chuyên Khoa:</label>
+                        <input type="text" id="doc-specialty" value="[Chuyên Khoa]">
+                    </div>
+                    <div class="form-group">
+                        <label for="doc-hospital">Bệnh viện/Cơ sở công tác:</label>
+                        <input type="text" id="doc-hospital" value="[Tên Bệnh Viện]" readonly>
+                    </div>
+                     <div class="form-group">
+                        <label for="doc-email">Email liên hệ:</label>
+                        <input type="email" id="doc-email" value="[email_bac_si@example.com]">
+                    </div>
+                     <div class="form-group">
+                        <label for="doc-phone">Số Điện Thoại:</label>
+                        <input type="tel" id="doc-phone" value="[Số điện thoại]">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cập nhật thông tin</button>
+                     <button type="button" class="btn btn-secondary">Đổi mật khẩu</button>
+                </form>
+            </section>
+
+             <section id="view-patient-record-detail" class="content-section" style="display: none;">
+                 <button onclick="goBackToPatientList()"> &larr; Quay lại danh sách</button>
+                 <h2>Hồ Sơ Y Tế - <span id="detail-patient-name"></span> (<span id="detail-patient-id"></span>)</h2>
+                 <div class="record-details-placeholder">
+                     Thông tin chi tiết hồ sơ bệnh nhân (Placeholder)
+                 </div>
+                  <button class="btn btn-primary" onclick="openAddRecordModalForCurrentPatient()"><i class="fas fa-plus"></i> Thêm Hồ Sơ Mới</button>
+             </section>
+
+             <div id="add-record-modal" class="modal" style="display: none;">
+                 <div class="modal-content">
+                     <span class="close-button" onclick="closeAddRecordModal()">&times;</span>
+                     <h2>Thêm Hồ Sơ Mới cho BN: <span id="modal-patient-id"></span></h2>
+                     <form id="add-record-form">
+                         <div class="form-group">
+                             <label for="record-date">Ngày khám:</label>
+                             <input type="date" id="record-date" required value="2025-04-03"> </div>
+                         <div class="form-group">
+                             <label for="record-diagnosis">Chẩn đoán:</label>
+                             <textarea id="record-diagnosis" rows="3" required placeholder="Nhập chẩn đoán..."></textarea>
+                         </div>
+                          <div class="form-group">
+                             <label for="record-notes">Ghi chú lâm sàng:</label>
+                             <textarea id="record-notes" rows="4" placeholder="Triệu chứng, diễn biến..."></textarea>
+                         </div>
+                         <div class="form-group">
+                             <label for="record-prescription">Toa thuốc:</label>
+                             <textarea id="record-prescription" rows="3" placeholder="Tên thuốc, liều dùng..."></textarea>
+                         </div>
+                          <div class="form-group">
+                             <label for="record-tests">Chỉ định xét nghiệm/Cận lâm sàng:</label>
+                             <textarea id="record-tests" rows="2" placeholder="Xét nghiệm máu, X-Quang..."></textarea>
+                         </div>
+                         <button type="submit" class="btn btn-primary">Lưu Hồ Sơ</button>
+                     </form>
+                 </div>
+             </div>
+
+
+            </main>
+    </div>
+
+    </body>
+</html>

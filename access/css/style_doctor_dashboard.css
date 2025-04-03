@@ -1,0 +1,189 @@
+/* Reset cơ bản & Font chung - Copy từ file CSS dashboard khác */
+body, h1, h2, h3, p, ul, li, table, th, td, span, form, label, input, select, button, i, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Layout chính - Copy từ file CSS dashboard khác */
+.dashboard-container { display: flex; min-height: 100vh; }
+
+/* Sidebar - Copy từ file CSS dashboard khác và chỉnh sửa nếu cần */
+.sidebar {
+    width: 250px; /* Giữ kích thước như patient dashboard */
+    background-color: #2c3e50; /* Màu giống patient dashboard */
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.sidebar .logo {
+    padding: 20px 15px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+.sidebar .logo h2 { color: #fff; font-size: 1.5em; margin: 0; }
+.sidebar .logo span { font-size: 0.8em; color: #bdc3c7; }
+
+.sidebar .menu ul { list-style: none; padding-top: 15px; }
+.sidebar .menu ul li a { display: block; padding: 14px 20px; color: #bdc3c7; text-decoration: none; font-size: 0.95em; transition: all 0.3s ease; border-left: 3px solid transparent; }
+.sidebar .menu ul li a i { margin-right: 10px; width: 16px; text-align: center; }
+.sidebar .menu ul li a:hover, .sidebar .menu ul li.active a { background-color: #34495e; color: #fff; border-left-color: #3498db; }
+
+.user-info-sidebar { margin-top: auto; padding: 20px; text-align: center; border-top: 1px solid #34495e; }
+.user-info-sidebar p { margin-bottom: 5px; font-size: 0.9em; color: #dee2e6;}
+.user-info-sidebar p small { font-size: 0.85em; color: #bdc3c7; }
+.user-info-sidebar .logout-btn { color: #e74c3c; text-decoration: none; font-weight: bold; font-size: 0.9em;}
+.user-info-sidebar .logout-btn:hover { text-decoration: underline; }
+
+/* Main Content Area - Copy từ file CSS dashboard khác */
+.main-content { flex-grow: 1; background-color: #fff; padding: 0; display: flex; flex-direction: column; }
+.main-header { background-color: #ecf0f1; padding: 15px 30px; border-bottom: 1px solid #dee2e6; }
+.main-header h1 { font-size: 1.6em; color: #2c3e50; margin: 0; }
+
+/* Content Sections - Copy từ file CSS dashboard khác */
+.content-section { padding: 30px; flex-grow: 1; }
+.content-section h2 { font-size: 1.5em; color: #34495e; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #dee2e6; }
+
+/* Table Styling - Copy từ file CSS dashboard khác */
+.table-container { background-color: #fff; border: 1px solid #e9ecef; border-radius: 5px; overflow-x: auto; margin-top: 20px; }
+table { width: 100%; border-collapse: collapse; }
+table thead { background-color: #f8f9fa; }
+table th, table td { border-bottom: 1px solid #dee2e6; padding: 12px 15px; text-align: left; font-size: 0.9em; vertical-align: middle; }
+table th { font-weight: 600; color: #495057; }
+table tbody tr:hover { background-color: #f1f3f5; }
+table td:last-child { white-space: nowrap; } /* Ngăn nút hành động bị xuống dòng */
+
+/* Buttons - Copy từ file CSS dashboard khác */
+.btn { display: inline-block; padding: 8px 15px; font-size: 0.9em; font-weight: 500; text-align: center; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; margin-right: 5px; vertical-align: middle;}
+.btn i { margin-right: 5px; }
+.btn-primary { background-color: #007bff; color: #fff; }
+.btn-primary:hover { background-color: #0056b3; }
+.btn-secondary { background-color: #6c757d; color: #fff; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-info { background-color: #17a2b8; color: white; border-color: #17a2b8;}
+.btn-danger { background-color: #dc3545; color: white; border-color: #dc3545;}
+.btn-sm { padding: 5px 10px; font-size: 0.8em; }
+
+/* Status labels - Copy từ file CSS dashboard khác */
+.status { padding: 3px 8px; border-radius: 10px; font-size: 0.8em; font-weight: 600; display: inline-block; border: 1px solid transparent;}
+.status.active { background-color: #d4edda; color: #155724; border-color: #c3e6cb;}
+.status.pending { background-color: #fff3cd; color: #856404; border-color: #ffeeba;}
+.status.rejected { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;}
+
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px 0 0 4px; /* Bo góc trái */
+    font-size: 1em;
+}
+.search-bar input:focus { outline: none; border-color: #80bdff; }
+.search-bar button {
+    border-radius: 0 4px 4px 0; /* Bo góc phải */
+}
+
+/* Search Results */
+.search-results h3 { font-size: 1.1em; margin-bottom: 15px; color: #495057; }
+.patient-result {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Notification List */
+.notification-list { list-style: none; }
+.notification-list li {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #007bff; /* Viền trái màu xanh */
+}
+.notification-list li.unread {
+    background-color: #e7f3ff; /* Nền khác cho thông báo chưa đọc */
+    border-left-color: #fcb000; /* Màu vàng cho chưa đọc */
+}
+.notification-list p { margin-bottom: 5px; color: #343a40; }
+.notification-list .timestamp { font-size: 0.8em; color: #6c757d; }
+.badge { /* Badge cho số thông báo ở menu */
+    background-color: #dc3545;
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.75em;
+    border-radius: 8px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Form Styling - Copy từ các trang khác */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #495057; font-size: 0.9em; }
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group input[type="date"], .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #ced4da; border-radius: 4px; font-size: 0.95em; }
+.form-group input[readonly] { background-color: #e9ecef; cursor: not-allowed; }
+.form-group textarea { min-height: 80px; }
+#doctor-profile form, #add-record-form { max-width: 700px; background-color: #fdfdff; padding: 25px; border: 1px solid #eee; border-radius: 5px; margin-top: 20px;}
+#doctor-profile form button, #add-record-form button { margin-top: 10px;}
+
+/* Modal Styling (cho Add Record) */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Vị trí cố định */
+    z-index: 1001; /* Nổi lên trên */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Cho phép cuộn nếu nội dung dài */
+    background-color: rgba(0,0,0,0.5); /* Nền đen mờ */
+    padding-top: 60px; /* Khoảng cách từ đỉnh */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Căn giữa theo chiều dọc và ngang */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Chiều rộng modal */
+    max-width: 700px; /* Chiều rộng tối đa */
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover, .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#add-record-modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+}
